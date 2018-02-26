@@ -16,7 +16,12 @@ trapezoidArea a b h = (a + b) * h / 2
 
 -- #02 = Write boolean expression to check if year is leap
 leapYear :: Word -> Bool
-leapYear year = undefined
+leapYear year
+    | notDivisibleBy 4 = False
+    | notDivisibleBy 100 = True
+    | notDivisibleBy 400 = False
+    | otherwise = True
+    where notDivisibleBy x = not $ year `mod` x == 0
 
 -- #03 = Message about reversed string ("abc is reversed cba")
 infoReversed :: String -> String
@@ -30,7 +35,9 @@ countDigits = length . show . abs
 -- #05 = Return euclidean distance of 2 2D points
 -- (use variables x1, y1, x2, y2 in expression instead of undefined,
 --  try not to use multiplication)
-distance2D (x1, y1) (x2, y2) = undefined
+distance2D (x1, y1) (x2, y2) = sqrt (xs + ys)
+    where xs = (x1 - x2) ^ 2
+          ys = (y1 - y2) ^ 2
 
 -- #06 = Complete the function to translate natural number to
 --       binary string (17 -> "1001", 0 -> "", 2 -> "10")
