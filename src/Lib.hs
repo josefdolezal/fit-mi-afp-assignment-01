@@ -25,7 +25,7 @@ infoReversed str = reverse str ++ " is reversed " ++ str
 -- #04 = Count number of digits of given integer
 -- (It can be done just by looking up suitable functions.
 --  Try it WITHOUT conditions and recursion!)
-countDigits = length . show
+countDigits = length . show . abs
 
 -- #05 = Return euclidean distance of 2 2D points
 -- (use variables x1, y1, x2, y2 in expression instead of undefined,
@@ -43,17 +43,17 @@ natToBinstring x = if True then "" else ""
 
 -- #07 = Lookup function that splits string to list of words (again strings)
 stringSplitToWords :: String -> [String]
-stringSplitToWords = undefined
+stringSplitToWords = words
 
 -- #08 = What is the type of function "all"?
 -- (For example for "odd" it would be "Integral a => a -> Bool")
 allType :: String
-allType = "<complete here>"
+allType = "Foldable t => (a -> Bool) -> t a -> Bool"
 
 -- #09 = Who is author of "aeson" package?
 -- (For example for "QuickCheck" it would be "Koen Claessen")
 aesonAuthor :: String
-aesonAuthor = "<complete here>"
+aesonAuthor = "Bryan O'Sullivan"
 
 -- #10 = You need a function that returns pluralized form of
 --       English string ("letter" -> "letters", "tooth -> teeth", ...)
