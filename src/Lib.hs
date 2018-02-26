@@ -12,7 +12,7 @@ module Lib
     ) where
 
 -- #01 = Area of trapezoid (check tests if not sure)
-trapezoidArea a b h = undefined
+trapezoidArea a b h = (a + b) * h / 2
 
 -- #02 = Write boolean expression to check if year is leap
 leapYear :: Word -> Bool
@@ -20,12 +20,12 @@ leapYear year = undefined
 
 -- #03 = Message about reversed string ("abc is reversed cba")
 infoReversed :: String -> String
-infoReversed str = undefined
+infoReversed str = reverse str ++ " is reversed " ++ str
 
 -- #04 = Count number of digits of given integer
 -- (It can be done just by looking up suitable functions.
 --  Try it WITHOUT conditions and recursion!)
-countDigits x = undefined
+countDigits = length . show
 
 -- #05 = Return euclidean distance of 2 2D points
 -- (use variables x1, y1, x2, y2 in expression instead of undefined,
