@@ -12,6 +12,7 @@ module Lib
     ) where
 
 import Language.English.Plural
+import Data.Bits
 
 -- #01 = Area of trapezoid (check tests if not sure)
 trapezoidArea a b h = (a + b) * h / 2
@@ -48,7 +49,9 @@ distance2D (x1, y1) (x2, y2) = sqrt (xs + ys)
 --  The if-then-else is expression as any other in Haskell, try to be DRY)
 natToBinstring :: Word -> String
 natToBinstring 0 = "" -- no need to change this, end of recursion
-natToBinstring x = if True then "" else ""
+natToBinstring x = natToBinstring partial ++ bit
+    where bit = show (x .&. 1)
+          partial = shiftR x 1
 
 -- #07 = Lookup function that splits string to list of words (again strings)
 stringSplitToWords :: String -> [String]
